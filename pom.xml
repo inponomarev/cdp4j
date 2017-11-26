@@ -213,7 +213,7 @@
      </execution>
     </executions>
    </plugin>
-   <plugin>
+ <!--  <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-gpg-plugin</artifactId>
     <version>1.5</version>
@@ -226,7 +226,7 @@
       </goals>
      </execution>
     </executions>
-   </plugin>
+   </plugin> -->
   </plugins>
  </build>
  <dependencies>
@@ -262,7 +262,7 @@
    <groupId>com.jcabi</groupId>
    <artifactId>jcabi-ssh</artifactId>
    <version>1.6</version>
-   <scope>provided</scope>
+   <!--<scope>provided</scope>-->
   </dependency>
   <dependency>
    <groupId>ch.qos.logback</groupId>

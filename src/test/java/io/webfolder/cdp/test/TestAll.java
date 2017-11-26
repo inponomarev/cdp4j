@@ -19,6 +19,7 @@ package io.webfolder.cdp.test;
 
 import static java.nio.file.Files.readAllLines;
 import static java.nio.file.Paths.get;
+import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -74,7 +75,7 @@ public class TestAll {
         Logger logger = loggerContext.getLogger("cdp4j.flow");
         logger.addAppender((Appender<ILoggingEvent>) appender);
 
-        factory = new Launcher().launch();
+        factory = new Launcher().launch(asList("--headless", "--disable-gpu"));
 
         session = factory.create();
 
@@ -134,7 +135,7 @@ public class TestAll {
         List<Option> options = session.getOptions("#multi-select");
         assertEquals(2, options.size());
 
-        session.setSelectedOptions("#multi-%s", Arrays.asList(1), "select");
+        session.setSelectedOptions("#multi-%s", asList(1), "select");
 
         options = session.getOptions("#multi-%s", "select");
 
